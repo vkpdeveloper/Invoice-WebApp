@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add New Invoice | KretaBillManager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script defer src="/__/firebase/7.6.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/7.6.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.6.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="whole">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a id="bName" class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/views/home.html">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="billAdd my-5">
+        <h1 class="text-center">Add a New Invoice</h1>
+        <form>
+            <div class="Row">
+            <div class="form-group Column">
+                <label for="">Invoice Number</label>
+                <input type="number" class="form-control" id="invoiceNo">
+            </div>
+            <div class="form-group Column">
+                <label for="">Customer Name</label>
+                <input type="text" class="form-control" id="customerName">
+            </div>
+            </div>
+            <div class="Row">
+            <div class="form-group Column">
+                <label for="">Mobile Number</label>
+                <input type="text" class="form-control" id="mobile">
+            </div>
+            <div class="form-group Column">
+                <label for="">Address</label>
+                <input type="text" class="form-control" id="address">
+            </div>
+        </div>
+        <div class="Row">
+            <div class="form-group Column">
+                <label for="">Product Name</label>
+                <input type="text" class="form-control" id="productName">
+            </div>
+            <div class="Row">
+                <div class="form-group Column">
+                    <label for="">Other Details (IMEI, SN Number etc)</label>
+                    <input type="text" class="form-control" id="othDetails">
+                </div>
+        </div>
+        </div>
+        <div class="Row">
+            <div class="form-group">
+                <label for="">Select GST</label>
+                <select onchange="onGSTSelect()" class="form-control" id="gstPer">
+                  <option value="5">5%</option>
+                  <option value="12">12%</option>
+                  <option value="18">18%</option>
+                  <option value="28">28%</option>
+                </select>
+              </div>
+            <div class="form-group Column">
+                <label for="">Pieces</label>
+                <input oninput="onPieces(this.value)" value="1" type="number" class="form-control" id="pcs">
+            </div>
+            <div class="form-group Column">
+                <label for="">Price/Unit</label>
+                <input oninput="onPrice(this.value)" value="1" type="number" class="form-control" id="price">
+            </div>
+            <div class="form-group Column">
+                <label for="">Total Price (with GST)</label>
+                <input value="0" type="number" class="form-control" id="totalPrice">
+            </div>
+        </div>
+            <center>
+                <button id="billCreate" type="submit" class="btn btn-primary my-3">Submit</button>
+            </center>
+        </form>
+    </div>
+    <center><div id="send"></div></center>
+</div>
+    <script src="../js/create.js"></script>
+</body>
+
+</html>
