@@ -13,6 +13,7 @@ Serial : testkeykreta
 1. Added delete option for invoice.
 2. Bill render is now so fast compared to version 1.0.
 3. When there is no invoice in the database then **No Invoice Found** shows up.
+4. **404 Page Not Found** Ui Changed **(Design Credit Goes to leenalavanya@codepen)**
 
 ## Version 3.0
 
