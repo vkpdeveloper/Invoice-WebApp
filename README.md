@@ -11,7 +11,7 @@ Serial : testkeykreta
 ## Version 2.0
 
 1. Added delete option for invoice.
-2. Bill render is now so fast compared to 1.0.
+2. Bill render is now so fast compared to version 1.0.
 3. When there is no invoice in the database then **No Invoice Found** shows up.
 
 ## Version 3.0
