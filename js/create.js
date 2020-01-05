@@ -108,7 +108,7 @@ if (localStorage.getItem('login') != null) {
                 otherDetails: othDetails,
             };
             let invoiceData = [cusName, date, mobile, address, productName, parseInt(pcs), parseInt(price), parseInt(totalPrice), invoiceNo, gstPer, othDetails]
-            localStorage.setItem('invoice', JSON.stringify(invoiceData))
+            sessionStorage.setItem('invoice', JSON.stringify(invoiceData))
             let uniqueId = generateUniqueFirestoreId();
             let data = JSON.parse(localStorage.getItem('login'));
             let db = firebase.firestore();
