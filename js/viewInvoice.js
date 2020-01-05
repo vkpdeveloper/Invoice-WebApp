@@ -8,7 +8,7 @@ let gloAddress;
 
 if (localStorage.getItem('login') != null) {
     document.addEventListener('DOMContentLoaded', () => {
-        let data = JSON.parse(localStorage.getItem('login'));
+        let data = JSON.parse(sessionStorage.getItem('login'));
         let db = firebase.firestore();
         let getDetails = db.collection('users').doc(data[0]);
         getDetails.get().then(doc => {
